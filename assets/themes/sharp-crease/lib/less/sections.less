@@ -23,22 +23,28 @@
   }
 }
 .sectioned-page-wrapper{
-  box-shadow: 0 0 12px 0 fade(@dkgrey,100%);
   position: relative;
   z-index: 10;
   .section{
     background-repeat: no-repeat;
     padding: 0;
     position: relative;
-    .section-subtitle,h4{
-      .customheader(1.8);
-      font-weight: 500;
-      color: @blue;
-      line-height: 1.25;
+    .section-title{
+      .customheader(3.2);
+      color: @dkgrey;
       margin: 0;
+      text-transform: uppercase;
     }
     .section-subtitle{
-      margin-bottom: 2rem;
+      .customheader(2.4);
+      color: @ltbrown;
+      line-height: 1.25;
+    }
+    h6{
+      .customheader(1.8);
+      color: @ltbrown;
+      line-height: 1.25;
+      margin: 0;
     }
       h3{
       .customheader(1.8);
@@ -68,8 +74,8 @@
   .section.bkg-grey{
     background-color: @offwhite;
   }
-  .section.bkg-blue{
-    background-color: @blue;
+  .section.bkg-brown{
+    background-color: @brown;
     color: @white;
     .section-title h3 {
       color: @white;
@@ -81,8 +87,8 @@
   .section.bkg-grey.arrow-down{
     .arrow-down(@offwhite);
   }
-  .section.bkg-blue.arrow-down{
-    .arrow-down(@blue);
+  .section.bkg-brown.arrow-down{
+    .arrow-down(@brown);
   }
   .section.bkg-white.arrow-down{
     .arrow-down(@white);
@@ -94,17 +100,17 @@
       }
     }
   }
-  .section.title-bar.title-bar-blue{
+  .section.title-bar.title-bar-brown{
     .section-title{
-      background-color: @blue;
+      background-color: @brown;
       h3{
         color: @white;
       }
     }
   }
-  .section.title-bar-blue.arrow-down{
+  .section.title-bar-brown.arrow-down{
     .section-title{
-      .arrow-down(@blue);
+      .arrow-down(@brown);
     }
   }
   .section.title-bar.arrow-down{
@@ -170,15 +176,30 @@
     }
   }
   //specific sections
-  .section-flow{
-    .section-body{
-      font-size: 1.8rem;
-      .wrap{
-        .col-md-6.first-child{
-          padding-top: 3em;
-        }
-      }
+  .section-testimonial,
+  .section-testimonials{
+    padding: 2rem 0;
+    .thick-bar{
+      float: right;
+      width: 3px;
+      background: @white;
+      margin-left: 2rem;
+      height: 120px;
     }
+    .section-title{
+      text-align: right;
+      color: @white;
+    }
+    .section-subtitle{
+      text-align: right;
+      color: fade(@white,60%);
+      text-transform: uppercase;
+    }
+  }
+  .section-map{
+    background-color: #E7E6E5;
+    background-position: center center;
+    min-height: 250px;
   }
 }
 
