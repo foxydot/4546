@@ -1,31 +1,26 @@
 @import 'lesshat';
 /* Import Fonts
 ------------------------------------------------------------ */
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,700,900,400,500);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
 
 /* Font Stacks */
 .customserif(@size:1.6) {
   font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
   line-height: 1.625;
 }
 .custombody(@size:1.6) {
-  font-family: "Raleway","Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
+  font-family: "Lato","Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 300;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
   line-height: 1.625;
 }
-
-.custombodythin(@size:1.6){
-  .custombody(@size);
-  font-family: "Helvetica Neue Thin", "Trebuchet MS", Calibri, sans-serif;
-}
 .customheader(@size:1.6) {
-  font-family: "Raleway","Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
+  font-family: "Lato","Trebuchet MS", Calibri, sans-serif;
+  font-weight: 300;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
   line-height: 1.625;
@@ -224,10 +219,18 @@
   background-color: fade(@color,20%);
 }
 
-.button:hover,
-.button a:hover, {
-  .button-hover();
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.entry-content .button {
+  .button();
+  &:hover{
+    .button-hover();
+  }
 }
+
 
 /* Clears */
 .msd-clearfix {

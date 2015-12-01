@@ -266,11 +266,23 @@ function msdlab_do_title_area(){
     }
 }
 
+
 function msdlab_do_section_title(){
     if(is_page()){
         global $post;
+        if(get_section_title()!=$post->post_title){
+            add_action('genesis_entry_header','genesis_do_post_title',5);
+        }
+        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
         print '<div class="wrap">';
-        genesis_do_post_title();
+        print '<h2 class="section-title">';
+        print get_section_title();
+        print '</h2>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
         print '</div>';
     } elseif(is_single()) {
         genesis_do_post_title();
