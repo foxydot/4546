@@ -8472,7 +8472,15 @@ Site Footer
 }
 figure.gallery-item {
   display: inline-block;
-  margin: 15px;
+  padding: 15px;
+  max-width: 33%;
+}
+figure.gallery-item:nth-child(3n+0) {
+  padding-right: 0;
+}
+figure.gallery-item:nth-child(3n+1),
+figure.gallery-item.first-child {
+  padding-left: 0;
 }
 .nav-responsive ul,
 .nav-responsive li,

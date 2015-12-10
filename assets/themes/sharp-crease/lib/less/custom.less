@@ -76,5 +76,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
 
 figure.gallery-item{
   display: inline-block;
-  margin: 15px;
+  padding: 15px;
+  max-width: 33%;
+  &:nth-child(3n+0) {
+    padding-right: 0;
+  } 
+  &:nth-child(3n+1),&.first-child {
+    padding-left: 0;
+  } 
 }
