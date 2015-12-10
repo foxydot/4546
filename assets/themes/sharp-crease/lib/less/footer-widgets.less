@@ -63,6 +63,7 @@ Footer Widgets
       }
     }
   }
+  
   .widget.msd-connected{
     .make-md-column(9);
     padding-right: 0;  
@@ -120,7 +121,9 @@ Footer Widgets
    font-style: italic;
     }
     input[type="submit"],input[type="button"],a.button{
-      .button();
+      border-radius: 0;
+      background: fade(@white,0%);
+      border: 2px solid @white;
       &:hover{
         background-color: fade(@white,20%);
       }

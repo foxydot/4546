@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
         .addTo(controller);
     //do some nifty stuff for the menu
     $('.widget_advanced_menu .menu>li.current-menu-item,.widget_advanced_menu .menu>li.current-menu-ancestor').addClass('open');
-    $('.widget_advanced_menu .menu>li').prepend(function(){
+    /*$('.widget_advanced_menu .menu>li').prepend(function(){
         if($(this).hasClass('menu-item-has-children')){
             if($(this).hasClass('open')){
                 return '<i class="fa fa-minus"></i>';
@@ -33,5 +33,5 @@ jQuery(document).ready(function($) {
                 return 'fa-minus';
             }
         });
-    });
+    });*/
 });

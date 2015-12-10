@@ -166,7 +166,7 @@ function msdlab_page_banner(){
         return;
     global $post;
     $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'page_banner' );
-    $background = $featured_image[0];
+    $background = $featured_image[0]!=''?$featured_image[0]:get_stylesheet_directory_uri().'/lib/img/footer.jpg';
     $ret = '<div class="banner clearfix" style="background-image:url('.$background.')"></div>';
     print $ret;
 }
@@ -242,7 +242,9 @@ function msdlab_maybe_move_title(){
     global $post;
     $template_file = get_post_meta($post->ID,'_wp_page_template',TRUE);
     if(is_page()){
-        remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
+        if(get_section_title()==$post->post_title){
+            remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
+        }
         add_action('msdlab_title_area','msdlab_do_section_title');
         add_action('genesis_after_header','msdlab_do_title_area');
     }
@@ -270,10 +272,10 @@ function msdlab_do_title_area(){
 function msdlab_do_section_title(){
     if(is_page()){
         global $post;
-        if(get_section_title()!=$post->post_title){
-            add_action('genesis_entry_header','genesis_do_post_title',5);
-        }
-        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
+        
+        $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+        $background = $featured_image[0]!=''?$featured_image[0]:get_stylesheet_directory_uri().'/lib/img/footer.jpg';
+        print '<div class="banner clearfix" style="background-image:url('.$background.')">';
         print '<div class="texturize">';
         print '<div class="gradient">';
         print '<div class="wrap">';
