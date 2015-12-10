@@ -32,4 +32,6 @@ jQuery(document).ready(function($) {
 	    }
 	});
 	$('.page-title-area .section-title,.page-title-area .entry-title').lettering('words');
+	
+	
 });

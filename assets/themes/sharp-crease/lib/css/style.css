@@ -8186,7 +8186,7 @@ Site Footer
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 1.625;
-  color: #cc6600;
+  color: #89491d;
   line-height: 1.25;
 }
 .sectioned-page-wrapper .section h6 {
@@ -8195,7 +8195,7 @@ Site Footer
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.625;
-  color: #cc6600;
+  color: #89491d;
   line-height: 1.25;
   margin: 0;
 }
@@ -8236,7 +8236,7 @@ Site Footer
   background-color: #F2F7FA;
 }
 .sectioned-page-wrapper .section.bkg-brown {
-  background-color: #630;
+  background-color: #351c0b;
   color: #FFF;
 }
 .sectioned-page-wrapper .section.bkg-brown .section-title h3 {
@@ -8273,8 +8273,8 @@ Site Footer
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: rgba(102, 51, 0, 0);
-  border-top-color: #630;
+  border-color: rgba(53, 28, 11, 0);
+  border-top-color: #351c0b;
   border-width: 20px 40px;
   margin-left: -40px;
   z-index: 300;
@@ -8300,7 +8300,7 @@ Site Footer
   padding-bottom: 2rem;
 }
 .sectioned-page-wrapper .section.title-bar.title-bar-brown .section-title {
-  background-color: #630;
+  background-color: #351c0b;
 }
 .sectioned-page-wrapper .section.title-bar.title-bar-brown .section-title h3 {
   color: #FFF;
@@ -8316,8 +8316,8 @@ Site Footer
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: rgba(102, 51, 0, 0);
-  border-top-color: #630;
+  border-color: rgba(53, 28, 11, 0);
+  border-top-color: #351c0b;
   border-width: 20px 40px;
   margin-left: -40px;
   z-index: 300;
