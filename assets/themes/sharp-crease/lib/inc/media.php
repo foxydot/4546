@@ -2,7 +2,7 @@
 /**
  * Add new image sizes
  */
-add_image_size('galleryb', 355, 255, TRUE);
+add_image_size('gallery', 355, 255, TRUE);
 add_image_size('facebook', 200, 200, TRUE);
 add_image_size('linkedin', 180, 110, TRUE);
 
