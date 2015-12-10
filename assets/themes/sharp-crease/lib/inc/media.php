@@ -105,3 +105,14 @@ function msd_carousel_wrapper($slides,$params = array()){
     </div>
 </div>';
 }
+/*
+Change the default image settings
+*/
+ 
+add_action( 'after_setup_theme', 'wnd_default_image_settings' );
+ 
+function wnd_default_image_settings() {
+    update_option( 'image_default_align', 'none' );
+    update_option( 'image_default_link_type', 'none' );
+    update_option( 'image_default_size', 'full' );
+}

@@ -199,7 +199,7 @@
 
 
 /* Buttons */
-.button(@color:@white) {
+.button(@background:@ltbrown,@color:@white) {
   padding: 6px 24px;
   .customsanserif;
   color: @color;
@@ -209,28 +209,24 @@
   display: table;
   margin: 12px auto;
   text-decoration: none;
-  border: 1px solid @color;
-  background-color: fade(@color, 0%);
+  background-color: @background;
+  border: 0;
+  border-radius: 24px;
 }
 
-
-.button-hover(@color:@white) {
-  .button(@color);
-  background-color: fade(@color,20%);
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.button,
-.entry-content .button {
+.button{
   .button();
-  &:hover{
-    .button-hover();
-  }
 }
 
+.button-hover(@background:@ltbrown,@color:@white) {
+  .button(@background,@color);
+  background-color: fade(@background,80%);
+}
+
+.button:hover,
+.button a:hover, {
+  .button-hover();
+}
 
 /* Clears */
 .msd-clearfix {
