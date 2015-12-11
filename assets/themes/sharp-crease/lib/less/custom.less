@@ -63,6 +63,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
          padding-top: 4rem;
          .content-sidebar-wrap main article .entry-header .entry-title {display: block;}
       }
+      .sectioned-page-wrapper{
+        .wrap;
+        .section{
+          .make-row();
+          >div{
+            .make-md-column(9);
+            .make-md-column-offset(3);
+            padding-left: 55px;
+          }
+        }
+      }
     }
   }
 }

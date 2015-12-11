@@ -6616,9 +6616,13 @@ Structure and Layout
 .wrap,
 .sidebar-primary section,
 .sidebar-secondary section,
-article {
+article,
+.container {
   margin: 0 auto;
   max-width: 1500px;
+}
+.container {
+  width: 100%;
 }
 .site-inner {
   clear: both;
@@ -8466,6 +8470,52 @@ Site Footer
 }
 .partition-the-experience.page-template-page-sectioned .site-container .site-inner .content-sidebar-wrap main article .entry-header .entry-title {
   display: block;
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper {
+  margin: 0 auto;
+  max-width: 1500px;
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:before,
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:after {
+  clear: both;
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:before,
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section:after {
+  clear: both;
+}
+.partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section > div {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 55px;
+}
+@media (min-width: 992px) {
+  .partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section > div {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 992px) {
+  .partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section > div {
+    margin-left: 25%;
+  }
 }
 .sidebar-content main {
   padding-left: 40px;
