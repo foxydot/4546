@@ -13,6 +13,7 @@
         width: 50%;
         min-height: 900px;
         background-image: url(../img/logo-home.png);
+        background-size: contain;
       }
     }
   }
@@ -39,9 +40,41 @@
     }
   }
   
- .section-products{
+ .section-check-it-now{
    .row{
-     margin: 3rem 0;
+     margin: 0 -15px;
+     .column-1,.column-2,.column-3{
+       background: fade(@beige,10%);
+       background-repeat: no-repeat;
+       background-position: center center;
+       background-size: cover;
+       padding-top: 350px;
+       color:@white;
+       text-align: center;
+       min-height: 800px;
+       border: 20px solid @offwhite;
+       text-transform: uppercase;
+       font-size: 1.8rem;
+       line-height: 1.2;
+       text-shadow: 0 0 6px @black;
+       .button{
+         .button(@white,@brown);
+         margin: 0 auto;
+         box-shadow: 0 0 6px @black;
+         text-shadow: 0 0 0 transparent;
+       }
+     }
+     .column-1{
+       border-left: 0;
+       background-image: url(../img/bkg-column1.jpg);
+     }
+     .column-2{
+       background-image: url(../img/bkg-column2.jpg);
+     }
+     .column-3{
+       border-right: 0;
+       background-image: url(../img/bkg-column3.jpg);
+     }
    }
  }
 }

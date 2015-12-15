@@ -76,6 +76,7 @@
   width: 50%;
   min-height: 900px;
   background-image: url(../img/logo-home.png);
+  background-size: contain;
 }
 .nav-primary {
   background: #886651;
@@ -90,6 +91,57 @@
 .sectioned-page-wrapper .section .section-body .button {
   margin-left: 0;
 }
-.sectioned-page-wrapper .section-products .row {
-  margin: 3rem 0;
+.sectioned-page-wrapper .section-check-it-now .row {
+  margin: 0 -15px;
+}
+.sectioned-page-wrapper .section-check-it-now .row .column-1,
+.sectioned-page-wrapper .section-check-it-now .row .column-2,
+.sectioned-page-wrapper .section-check-it-now .row .column-3 {
+  background: rgba(136, 102, 81, 0.1);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 350px;
+  color: #FFF;
+  text-align: center;
+  min-height: 800px;
+  border: 20px solid #F2F7FA;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  text-shadow: 0 0 6px #000;
+}
+.sectioned-page-wrapper .section-check-it-now .row .column-1 .button,
+.sectioned-page-wrapper .section-check-it-now .row .column-2 .button,
+.sectioned-page-wrapper .section-check-it-now .row .column-3 .button {
+  padding: 6px 24px;
+  font-family: "Lato", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #351c0b;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px auto;
+  text-decoration: none;
+  background-color: #FFF;
+  border: 0;
+  border-radius: 24px;
+  margin: 0 auto;
+  box-shadow: 0 0 6px #000;
+  text-shadow: 0 0 0 transparent;
+}
+.sectioned-page-wrapper .section-check-it-now .row .column-1 {
+  border-left: 0;
+  background-image: url(../img/bkg-column1.jpg);
+}
+.sectioned-page-wrapper .section-check-it-now .row .column-2 {
+  background-image: url(../img/bkg-column2.jpg);
+}
+.sectioned-page-wrapper .section-check-it-now .row .column-3 {
+  border-right: 0;
+  background-image: url(../img/bkg-column3.jpg);
 }
