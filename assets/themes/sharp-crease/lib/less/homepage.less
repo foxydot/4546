@@ -1,6 +1,30 @@
 @import 'lesshat';
 @import 'mixins';
 
+.site-header{
+  background: url(../img/bkg-header.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .title-area{
+    width: 100%;
+    .site-title{
+      a{
+        width: 50%;
+        min-height: 900px;
+        background-image: url(../img/logo-home.png);
+      }
+    }
+  }
+}
+.nav-primary{
+  background: @beige;
+  float: none;
+  .genesis-nav-menu{
+    text-align: center;
+  }
+}
+
 #hp-top{
 }
 .sectioned-page-wrapper{

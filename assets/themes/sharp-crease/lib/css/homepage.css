@@ -63,6 +63,27 @@
   clear: both;
   visibility: hidden;
 }
+.site-header {
+  background: url(../img/bkg-header.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.site-header .title-area {
+  width: 100%;
+}
+.site-header .title-area .site-title a {
+  width: 50%;
+  min-height: 900px;
+  background-image: url(../img/logo-home.png);
+}
+.nav-primary {
+  background: #886651;
+  float: none;
+}
+.nav-primary .genesis-nav-menu {
+  text-align: center;
+}
 .sectioned-page-wrapper .section .section-body p {
   font-size: 20px;
 }

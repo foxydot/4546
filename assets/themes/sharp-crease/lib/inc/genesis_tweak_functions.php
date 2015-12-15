@@ -125,6 +125,13 @@ function msdlab_do_header() {
     do_action( 'genesis_site_description' );
     echo '</div>';
 }
+
+function msdlab_prep_homepage_head(){
+    if(is_front_page()){
+        remove_action('genesis_header','msdlab_do_nav');
+        add_action('genesis_after_header','msdlab_do_nav');
+    }
+}
  /**
  * Customize search form input
  */
