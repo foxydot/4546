@@ -1,0 +1,33 @@
+.woocommerce,.woocommerce-page{
+  .page-title, .product-title, 
+  .entry-title{
+    .customheader(3.0);
+    font-weight: 300;
+    color: @medgrey;
+    line-height: 1.25;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .entry-subtitle{
+    .customheader(2.4);
+    font-weight: 300;
+    color: @ltbrown;
+    line-height: 1.25;
+  }
+  ul.products{
+    li.product{
+      width: 30.75%;
+    }
+  }
+  div.product{
+    p.price,span.price{
+      color: @brown;
+    } 
+  }
+  #respond input#submit, a.button, button.button, input.button,
+  #respond input#submit.alt, a.button.alt, button.button.alt, input.button.alt{
+    .button();
+    margin-left: 0;
+    border-radius: 0;
+  }
+}

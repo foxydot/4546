@@ -255,6 +255,10 @@ function msdlab_maybe_move_title(){
         add_action('msdlab_title_area','msdlab_do_section_title');
         add_action('genesis_after_header','msdlab_do_title_area');
     }
+    if(is_woocommerce()){
+        add_action('msdlab_title_area','msdlab_do_section_title');
+        add_action('genesis_after_header','msdlab_do_title_area');
+    }
 }
  
 function msdlab_do_title_area(){
@@ -277,17 +281,23 @@ function msdlab_do_title_area(){
 
 
 function msdlab_do_section_title(){
-    if(is_page()){
+    if(is_page() || is_archive() || is_cpt('product')){
         global $post;
-        
+        $section_title = is_page()?get_section_title():'shop';
         $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-        $background = $featured_image[0]!=''?$featured_image[0]:get_stylesheet_directory_uri().'/lib/img/footer.jpg';
+        if(is_woocommerce()) {
+            $background = get_stylesheet_directory_uri().'/lib/img/bkg-shop.jpg';
+        } elseif($featured_image[0]!='') {
+            $background = $featured_image[0];
+        } else {
+            $background = get_stylesheet_directory_uri().'/lib/img/footer.jpg';
+        }
         print '<div class="banner clearfix" style="background-image:url('.$background.')">';
         print '<div class="texturize">';
         print '<div class="gradient">';
         print '<div class="wrap">';
         print '<h2 class="section-title">';
-        print get_section_title();
+        print $section_title;
         print '</h2>';
         print '</div>';
         print '</div>';

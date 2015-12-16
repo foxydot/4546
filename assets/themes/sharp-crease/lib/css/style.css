@@ -6619,6 +6619,7 @@ Structure and Layout
 article,
 .container {
   margin: 0 auto;
+  width: 98%;
   max-width: 1500px;
 }
 .container {
@@ -7796,6 +7797,7 @@ Footer Widgets
 }
 .footer-widgets .widget-area {
   margin: 0 auto;
+  width: 98%;
   max-width: 1500px;
 }
 .footer-widgets .widget {
@@ -8397,6 +8399,82 @@ Site Footer
     margin-left: 0px;
   }
 }
+.woocommerce .page-title,
+.woocommerce-page .page-title,
+.woocommerce .product-title,
+.woocommerce-page .product-title,
+.woocommerce .entry-title,
+.woocommerce-page .entry-title {
+  font-family: "Lato", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #7F7F7F;
+  line-height: 1.25;
+  margin: 0;
+  text-transform: uppercase;
+}
+.woocommerce .entry-subtitle,
+.woocommerce-page .entry-subtitle {
+  font-family: "Lato", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #89491d;
+  line-height: 1.25;
+}
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  width: 30.75%;
+}
+.woocommerce div.product p.price,
+.woocommerce-page div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce-page div.product span.price {
+  color: #351c0b;
+}
+.woocommerce #respond input#submit,
+.woocommerce-page #respond input#submit,
+.woocommerce a.button,
+.woocommerce-page a.button,
+.woocommerce button.button,
+.woocommerce-page button.button,
+.woocommerce input.button,
+.woocommerce-page input.button,
+.woocommerce #respond input#submit.alt,
+.woocommerce-page #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce-page a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce-page button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-page input.button.alt {
+  padding: 6px 24px;
+  font-family: "Lato", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px auto;
+  text-decoration: none;
+  background-color: #89491d;
+  border: 0;
+  border-radius: 24px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  margin-left: 0;
+  border-radius: 0;
+}
 .page-title-area {
   background: #1a1a1a;
 }
@@ -8407,6 +8485,7 @@ Site Footer
 }
 .page-title-area .banner .texturize .gradient {
   min-height: 250px;
+  min-height: 17vw;
   background: -moz-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1a1a1a), color-stop(10%, rgba(26, 26, 26, 0.4)), color-stop(90%, rgba(26, 26, 26, 0.4)), color-stop(100%, #1a1a1a));
@@ -8433,7 +8512,8 @@ Site Footer
   text-transform: uppercase;
   color: #FFF;
   margin-bottom: 0;
-  padding: 10rem 0;
+  padding: 100px 0;
+  padding: 7vw 0;
   font-weight: 300;
 }
 .page-title-area .section-title span:last-child,
@@ -8473,6 +8553,7 @@ Site Footer
 }
 .partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper {
   margin: 0 auto;
+  width: 98%;
   max-width: 1500px;
 }
 .partition-the-experience.page-template-page-sectioned .site-container .sectioned-page-wrapper .section {

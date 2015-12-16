@@ -8,11 +8,11 @@ add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form'
 add_theme_support( 'genesis-responsive-viewport' );//* Add viewport meta tag for mobile browsers
 add_theme_support( 'custom-background' );//* Add support for custom background
 add_theme_support( 'woocommerce' );
+add_theme_support( 'genesis-connect-woocommerce' );
 add_filter ( 'genesis_edit_post_link' , '__return_false' );
 //* Add support for structural wraps
 add_theme_support( 'genesis-structural-wraps', array(
 'header',
-'nav',
 'subnav',
 'footer',
 'site-inner'
