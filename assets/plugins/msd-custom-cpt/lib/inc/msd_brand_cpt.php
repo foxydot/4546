@@ -18,7 +18,8 @@ if (!class_exists('MSDBrandCPT')) {
             $this->plugin_url = plugin_dir_url('msd-custom-cpt/msd-custom-cpt.php');
             $this->plugin_path = plugin_dir_path('msd-custom-cpt/msd-custom-cpt.php');
             //Actions
-            add_action( 'init', array(&$this,'register_cpt_brand') );
+            add_action( 'init', array(&$this,'register_cpt_brand') );           
+            add_action( 'init', array(&$this,'register_taxonomy_market_sector') );
             add_action('admin_head', array(&$this,'plugin_header'));
             add_action('admin_print_scripts', array(&$this,'add_admin_scripts') );
             add_action('admin_print_styles', array(&$this,'add_admin_styles') );
@@ -78,6 +79,40 @@ if (!class_exists('MSDBrandCPT')) {
             register_post_type( $this->cpt, $args );
         }
         
+        function register_taxonomy_market_sector(){
+            
+            $labels = array( 
+                'name' => _x( 'Market sectors', 'market-sectors' ),
+                'singular_name' => _x( 'Market sector', 'market-sectors' ),
+                'search_items' => _x( 'Search market sectors', 'market-sectors' ),
+                'popular_items' => _x( 'Popular market sectors', 'market-sectors' ),
+                'all_items' => _x( 'All market sectors', 'market-sectors' ),
+                'parent_item' => _x( 'Parent market sector', 'market-sectors' ),
+                'parent_item_colon' => _x( 'Parent market sector:', 'market-sectors' ),
+                'edit_item' => _x( 'Edit market sector', 'market-sectors' ),
+                'update_item' => _x( 'Update market sector', 'market-sectors' ),
+                'add_new_item' => _x( 'Add new market sector', 'market-sectors' ),
+                'new_item_name' => _x( 'New market sector name', 'market-sectors' ),
+                'separate_items_with_commas' => _x( 'Separate market sectors with commas', 'market-sectors' ),
+                'add_or_remove_items' => _x( 'Add or remove market sectors', 'market-sectors' ),
+                'choose_from_most_used' => _x( 'Choose from the most used market sectors', 'market-sectors' ),
+                'menu_name' => _x( 'Market sectors', 'market-sectors' ),
+            );
+        
+            $args = array( 
+                'labels' => $labels,
+                'public' => true,
+                'show_in_nav_menus' => true,
+                'show_ui' => true,
+                'show_tagcloud' => false,
+                'hierarchical' => true, //we want a "category" style taxonomy, but may have to restrict selection via a dropdown or something.
+        
+                'rewrite' => array('slug'=>'market-sector','with_front'=>false),
+                'query_var' => true
+            );
+        
+            register_taxonomy( 'market_sector', array($this->cpt), $args );
+        }
         function plugin_header() {
             global $post_type;
             ?>
