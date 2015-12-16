@@ -32,6 +32,15 @@ jQuery(document).ready(function($) {
 	    }
 	});
 	$('.page-title-area .section-title,.page-title-area .entry-title').lettering('words');
-	
+	var $root = $('.nav-primary');
+    $('a').click(function() {
+        var href = $.attr(this, 'href');
+        $root.animate({
+            scrollTop: $(href).offset().top
+        }, 500, function () {
+            window.location.hash = href;
+        });
+        return false;
+    });
 	
 });
