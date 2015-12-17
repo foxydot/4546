@@ -32,7 +32,7 @@ if (!class_exists('MSDBrandCPT')) {
             add_filter( 'pre_get_posts', array(&$this,'custom_query') );
             add_filter( 'enter_title_here', array(&$this,'change_default_title') );
             
-            add_shortcode('logo_gallery', array(&$this,'logo_gallery_js'));
+            add_shortcode('logo_gallery', array(&$this,'logo_gallery'));
             add_image_size('logo',300,400,false);
         }
 
@@ -336,6 +336,15 @@ if (!class_exists('MSDBrandCPT')) {
             foreach($brands AS $brand){
                 $logo_image = wp_get_attachment_image_src( get_post_thumbnail_id($brand->ID), 'logo' );
                 $logo_url = $logo_image[0];
+                $terms = wp_get_post_terms($brand->ID,'market_sector');
+                $market_sector = array();
+                $market_sectors = false;
+                if(count($terms)>0){
+                    foreach($terms AS $term){
+                        $market_sector[] = $term->slug;
+                    }
+                    $market_sectors = implode(' ', $market_sector);
+                }
                 switch($fade_in){
                     case 'rand':
                     case 'random':
@@ -352,37 +361,21 @@ if (!class_exists('MSDBrandCPT')) {
                         $fade = '1ms';
                         break;
                 }
-                if($i < $rows * $columns){
-                    $ret .= '<div class="col-md-'. 12/$columns .' col-sm-1 item-wrapper" style="-webkit-transition-delay: '.$fade.';-moz-transition-delay: '.$fade.';-ms-transition-delay: '.$fade.';-o-transition-delay: '.$fade.';transition-delay: '.$fade.';"><div class="item" style="background-image:url('.$logo_url.');"></div></div>';
-                } else {
-                    
-                }
+                $ret .= '<div class="col-md-'. 12/$columns .' col-sm-1 item-wrapper '.$market_sectors.'"><div class="item" style="background-image:url('.$logo_url.');"></div></div>';
                 $i++;
             }
-            $ret = '<div class="msdlab_logo_gallery">'.$ret.'</div>';
+           $filters[] = '<a href="#" data-filter="*" class="active button">View All</a>';
+           $terms = get_terms('market_sector',array('orderby'=>'slug','order'=>'ASC'));
+           foreach($terms AS $term){
+               $filters[] = '<a href="#" class="button" data-filter=".'.$term->slug.'">'.$term->name.'</a>';
+           }
+           $menu = $allbutton.'<div id="filters">'.implode(' ', $filters).'</div>';
+            $ret = $menu.'<div id="msdlab_logo_gallery" class="msdlab_logo_gallery">'.$ret.'</div>';
             $ret .= '
             <style>
                 .msdlab_logo_gallery .item-wrapper {
                     height:'.$item_height.';
-                    opacity: 0;
                     padding: 2rem 4rem;
-                    /* For Safari 3.1 to 6.0 */
-                    -webkit-transition-property: all;
-                    -webkit-transition-duration: 2s;
-                    -webkit-transition-timing-function: ease-in-out;
-                    -moz-transition-property: all;
-                    -moz-transition-duration: 2s;
-                    -moz-transition-timing-function: ease-in-out;
-                    -ms-transition-property: all;
-                    -ms-transition-duration: 2s;
-                    -ms-transition-timing-function: ease-in-out;
-                    -o-transition-property: all;
-                    -o-transition-duration: 2s;
-                    -o-transition-timing-function: ease-in-out;
-                    /* Standard syntax */
-                    transition-property: all;
-                    transition-duration: 2s;
-                    transition-timing-function: ease-in-out;
                 }
                 .msdlab_logo_gallery .item-wrapper .item {
                     background-size: contain;
@@ -397,6 +390,28 @@ if (!class_exists('MSDBrandCPT')) {
                 jQuery(document).ready(function($) {   
                     $(".msdlab_logo_gallery .item-wrapper").css("opacity",1);
                 });
+                jQuery(window).load(function() {
+                    jQuery(".msdlab_logo_gallery").isotope({
+                      itemSelector : ".item-wrapper",
+                      layoutMode: "fitRows",
+                    }); 
+                    
+                    // filter items when filter link is clicked
+                    jQuery("#filters a").click(function(){
+                      jQuery("#filters a").removeClass("active");
+                      jQuery(this).addClass("active");
+                      var selector = jQuery(this).attr("data-filter");
+                      jQuery(".msdlab_logo_gallery").isotope({
+                          itemSelector : ".item-wrapper",
+                          layoutMode : "fitRows",
+                          filter: selector
+                        }); 
+                      return false;
+                    });   
+                    jQuery( window ).scroll(function() {
+                        jQuery(".msdlab_logo_gallery").isotope();
+                    });
+                } );
             </script>';
             return $ret;
         }     

@@ -6308,7 +6308,9 @@ you can use the generic selector below, but it's slower:
   transition: all 0.1s ease-in-out;
 }
 .button:hover,
-.button a:hover {
+.button a:hover,
+.button:focus,
+.button a:focus {
   padding: 6px 24px;
   font-family: "Lato", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 300;
@@ -8612,6 +8614,13 @@ figure.gallery-item:nth-child(3n+0) {
 figure.gallery-item:nth-child(3n+1),
 figure.gallery-item.first-child {
   padding-left: 0;
+}
+#filters {
+  text-align: center;
+}
+#filters .button {
+  display: inline-block;
+  margin: 0;
 }
 .nav-responsive ul,
 .nav-responsive li,
