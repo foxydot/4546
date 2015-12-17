@@ -361,7 +361,7 @@ if (!class_exists('MSDBrandCPT')) {
                         $fade = '1ms';
                         break;
                 }
-                $ret .= '<div class="col-md-'. 12/$columns .' col-sm-1 item-wrapper '.$market_sectors.'"><div class="item" style="background-image:url('.$logo_url.');"></div></div>';
+                $ret .= '<div class="col-md-'. 12/$columns .' col-xs-6 item-wrapper '.$market_sectors.'"><div class="item" style="background-image:url('.$logo_url.');"></div></div>';
                 $i++;
             }
            $filters[] = '<a href="#" data-filter="*" class="active button">View All</a>';
@@ -374,17 +374,21 @@ if (!class_exists('MSDBrandCPT')) {
             $ret .= '
             <style>
                 .msdlab_logo_gallery .item-wrapper {
-                    height:'.$item_height.';
                     padding: 2rem 4rem;
                 }
                 .msdlab_logo_gallery .item-wrapper .item {
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    height: 100%;
-                    width: 100%;
+                    min-height: '.$item_height.';
+                    min-width: '.$item_height.';
                 }
-
+                @media only screen and (max-width: 1023px) {
+                    .msdlab_logo_gallery .item-wrapper .item {
+                        min-height: 15vw;
+                        min-width: 15vw;
+                    }
+                }
             </style>
             <script>
                 jQuery(document).ready(function($) {   

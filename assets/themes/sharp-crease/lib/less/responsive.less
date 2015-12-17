@@ -36,8 +36,9 @@
         .site-title{
           a{
             width: 100%;
-            margin: 1rem auto;
+            margin: 0 auto;
             float: none;
+            background-size: contain;
           }
         }
       }
@@ -62,30 +63,29 @@
       width: 100%;
       position: relative;
       text-indent: 20px;
-      background: @blue;
+      background: @beige;
       min-height: 46px;
       padding-top: 14px;
       position: relative;
       > strong {
         color: #fff;
         text-decoration: none;
-        text-shadow:1px 1px 1px rgba(0, 0, 0, 0.78);
         font-size: 1.2rem;
       }
       ul#mobile_menu {
         margin-top: 14px;
-        border-top: 1px solid @ltgrey;
+        border-top: 1px solid @brown;
         li{
           display: block;
           list-style: none;
           padding: 0;
           a{
-            background: @blue;
+            background: @beige;
             color: @white;
             display: block;
             width: 100%;
             padding: 0.5em;
-            border-bottom: 1px solid @ltgrey;
+            border-bottom: 1px solid @brown;
             font-size: 1.2rem;
             .toggle-switch{
               right: 15px;
@@ -94,7 +94,7 @@
             }
           }
           a:hover{
-            background: lighten(@blue,10%);
+            background: fade(@beige,60%);
           }
           .toggle-switch{
             margin-right: 12px;
@@ -132,7 +132,7 @@
         }
         li.current-menu-item{
           a{
-          background: lighten(@blue, 15%);
+          background: fade(@beige,60%);
           }
         }
       }
@@ -146,12 +146,12 @@
     font-family: 'FontAwesome';
     font-size: 2.2rem;
     text-indent: 0;
-    color: @blue;
+    color: @brown;
     text-align: center;
     width: 30px;
     height: 30px;
     .border-radius(4px);
-    background: @white;
+    background: transparent;
     display: inline-block;
     position: absolute;
     right: 15px;

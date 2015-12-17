@@ -8652,8 +8652,9 @@ figure.gallery-item.first-child {
   }
   .header-image .site-header .title-area .site-title a {
     width: 100%;
-    margin: 1rem auto;
+    margin: 0 auto;
     float: none;
+    background-size: contain;
   }
   .header-image .site-header .nav-primary {
     margin: 0 auto;
@@ -8675,7 +8676,7 @@ figure.gallery-item.first-child {
     display: inline-block;
     width: 100%;
     text-indent: 20px;
-    background: #0F6BAE;
+    background: #886651;
     min-height: 46px;
     padding-top: 14px;
     position: relative;
@@ -8683,12 +8684,11 @@ figure.gallery-item.first-child {
   .nav-responsive a#pull > strong {
     color: #fff;
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.78);
     font-size: 1.2rem;
   }
   .nav-responsive a#pull ul#mobile_menu {
     margin-top: 14px;
-    border-top: 1px solid #959595;
+    border-top: 1px solid #351c0b;
   }
   .nav-responsive a#pull ul#mobile_menu li {
     display: block;
@@ -8696,19 +8696,19 @@ figure.gallery-item.first-child {
     padding: 0;
   }
   .nav-responsive a#pull ul#mobile_menu li a {
-    background: #0F6BAE;
+    background: #886651;
     color: #FFF;
     display: block;
     width: 100%;
     padding: 0.5em;
-    border-bottom: 1px solid #959595;
+    border-bottom: 1px solid #351c0b;
     font-size: 1.2rem;
   }
   .nav-responsive a#pull ul#mobile_menu li a .toggle-switch {
     right: 15px;
   }
   .nav-responsive a#pull ul#mobile_menu li a:hover {
-    background: #1388dd;
+    background: rgba(136, 102, 81, 0.6);
   }
   .nav-responsive a#pull ul#mobile_menu li .toggle-switch {
     margin-right: 12px;
@@ -8738,7 +8738,7 @@ figure.gallery-item.first-child {
     display: none;
   }
   .nav-responsive a#pull ul#mobile_menu li.current-menu-item a {
-    background: #1e95ec;
+    background: rgba(136, 102, 81, 0.6);
   }
   .nav-responsive a#pull:hover {
     text-decoration: none;
@@ -8748,7 +8748,7 @@ figure.gallery-item.first-child {
     font-family: 'FontAwesome';
     font-size: 2.2rem;
     text-indent: 0;
-    color: #0F6BAE;
+    color: #351c0b;
     text-align: center;
     width: 30px;
     height: 30px;
@@ -8758,7 +8758,7 @@ figure.gallery-item.first-child {
     -moz-background-clip: padding;
     border-radius: 4px;
     background-clip: padding-box;
-    background: #FFF;
+    background: transparent;
     display: inline-block;
     position: absolute;
     right: 15px;
